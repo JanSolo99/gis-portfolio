@@ -689,72 +689,52 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     
     <script>
-        // Sample project data - replace with your actual projects
+        // GIS Project Portfolio
         const projects = [
             {
                 id: 1,
-                title: "Urban Heat Island Analysis",
-                type: "Environmental",
-                description: "Analyzed urban heat patterns using Landsat imagery and identified cooling strategies for city planning.",
-                lat: 40.7128,
-                lng: -74.0060,
+                title: "High School Equity Analysis",
+                type: "Education Planning",
+                description: "Analyzed spatial equity in high school access and educational resources across Wollongong, identifying areas requiring improved educational infrastructure.",
+                lat: -34.4278,
+                lng: 150.8931,
                 reportUrl: "#",
-                icon: "🌡️"
+                icon: "🏫"
             },
             {
                 id: 2,
-                title: "Flood Risk Assessment",
-                type: "Disaster Management",
-                description: "Developed flood risk maps for coastal communities using elevation data and historical flood patterns.",
-                lat: 29.7604,
-                lng: -95.3698,
+                title: "Natural Hazard Risk Country Profile",
+                type: "Disaster Risk Management",
+                description: "Comprehensive assessment of Bangladesh's exposure to natural hazards including floods, cyclones, and droughts for national risk reduction planning.",
+                lat: 23.6850,
+                lng: 90.3563,
                 reportUrl: "#",
-                icon: "🌊"
+                icon: "🌪️"
             },
             {
                 id: 3,
-                title: "Wildlife Corridor Mapping",
-                type: "Conservation",
-                description: "Identified and mapped critical wildlife corridors to support biodiversity conservation efforts.",
-                lat: 45.5152,
-                lng: -122.6784,
+                title: "Multi-Objective Land Allocation",
+                type: "Regional Planning",
+                description: "Optimized land use allocation in regional ACT considering conservation, agriculture, and development objectives using spatial modeling techniques.",
+                lat: -35.4735,
+                lng: 149.0124,
                 reportUrl: "#",
-                icon: "🦌"
+                icon: "🗺️"
             },
             {
                 id: 4,
-                title: "Public Transit Accessibility",
-                type: "Urban Planning",
-                description: "Analyzed public transportation accessibility and identified underserved areas for improvement.",
-                lat: 34.0522,
-                lng: -118.2437,
+                title: "Healthcare Access for Older Citizens",
+                type: "Health Geography",
+                description: "Analyzed spatial accessibility to healthcare services for elderly residents and aged care facilities in urban ACT, identifying service gaps and improvement opportunities.",
+                lat: -35.2809,
+                lng: 149.1300,
                 reportUrl: "#",
-                icon: "🚌"
-            },
-            {
-                id: 5,
-                title: "Agricultural Land Use Change",
-                type: "Agriculture",
-                description: "Monitored agricultural land use changes over two decades using satellite imagery classification.",
-                lat: 41.8781,
-                lng: -87.6298,
-                reportUrl: "#",
-                icon: "🌾"
-            },
-            {
-                id: 6,
-                title: "Emergency Response Optimization",
-                type: "Public Safety",
-                description: "Optimized emergency response routes and facility locations using network analysis.",
-                lat: 33.4484,
-                lng: -112.0740,
-                reportUrl: "#",
-                icon: "🚑"
+                icon: "🏥"
             }
         ];
 
-        // Initialize map
-        const map = L.map('projects-map').setView([39.8283, -98.5795], 4);
+        // Initialize map centered on Australia/Asia-Pacific region
+        const map = L.map('projects-map').setView([-10, 120], 3);
 
         // Add tile layer with a modern style
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
